@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ShowHide from "./ShowHide";
 
 type ToDoItems = {
   id: number;
@@ -23,10 +24,6 @@ let nexId = 4;
 function ToDoList() {
   const [nameToDo, setNameToDo] = useState<string>("");
   const [listTodo, setListToDo] = useState<ToDoItems[]>(initialToDo);
-  const [showMore, setShowMore] = useState<boolean>(false);
-  function handleShowMore() {
-    setShowMore(!showMore);
-  }
 
   return (
     <div className="space-x-2 ">
@@ -44,14 +41,12 @@ function ToDoList() {
           <li key={nameToDo.id}>
             {nameToDo.nameToDo}
             <button onClick={() => {}} className="mx-4 bg-sky-400 rounded-md px-3">
-              {" "}
               delete
             </button>
+            <ShowHide />
           </li>
         ))}
       </ul>
-      <button onClick={handleShowMore}>{showMore ? "Hide" : "Show"} details</button>
-      {showMore && <p>"Detal tugas anda adalah"</p>}
     </div>
   );
 }
