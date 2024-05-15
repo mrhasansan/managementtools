@@ -1,11 +1,14 @@
-import ToDoList from "./components/ToDoList";
+import Aside from "./components/Aside";
+import Body from "./components/Body";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Management Tools</h1>
-      <ToDoList />
-    </>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-1 flex">
+        <Aside />
+        <Body />
+      </main>
+    </div>
   );
 }
 

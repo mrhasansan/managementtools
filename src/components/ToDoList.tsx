@@ -26,7 +26,8 @@ function ToDoList() {
   const [listTodo, setListToDo] = useState<ToDoItems[]>(initialToDo);
 
   return (
-    <div className="space-x-2 ">
+    <div className="overflow-y-auto max-h-96">
+      <h1 className=" font-bold">Task Managment & To-do List App</h1>
       <input required type="text" value={nameToDo} className=" border border-gray-50 rounded-md px-4 m-4" placeholder="Add a new to-do" onChange={(e) => setNameToDo(e.target.value)} />
       <button
         className=" bg-sky-500 rounded-md mx-4 px-4"
@@ -36,7 +37,7 @@ function ToDoList() {
       >
         Add
       </button>
-      <ul className=" list-disc list-inside  space-y-2">
+      <ul className="divide-y divide-gray-300">
         {listTodo.map((nameToDo) => (
           <li key={nameToDo.id}>
             {nameToDo.nameToDo}
