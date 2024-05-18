@@ -7,9 +7,11 @@ export default function ShowHide() {
     setShowMore(!showMore);
   }
   return (
-    <div>
-      <button onClick={handleClick}>{showMore ? "Hide" : "Show"}</button>
-      {showMore && <p> tugas detail anda aladah ....</p>}
+    <div className=" p-4 rounded-lg">
+      <button className=" bg-slate-500 rounded-lg w-auto px-4" onClick={handleClick}>
+        {showMore ? "Hide Details" : "Show Details"}
+      </button>
+      {showMore && <p> tugas detail anda adaah ....</p>}
     </div>
   );
 }
