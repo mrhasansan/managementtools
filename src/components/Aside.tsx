@@ -3,7 +3,7 @@ import { AiOutlineSchedule } from "react-icons/ai";
 import { FaBorderAll } from "react-icons/fa6";
 import { IoIosDoneAll } from "react-icons/io";
 
-export default function Aside() {
+export function Aside() {
   function search(formData: FormData) {
     const query = formData.get("query");
     alert(`You searched "${query}"`);

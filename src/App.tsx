@@ -1,5 +1,5 @@
-import Aside from "./components/aside";
-import Body from "./components/body";
+import { Aside } from "./components/aside";
+import { Body } from "./components/body";
 
 export function App() {
   return (

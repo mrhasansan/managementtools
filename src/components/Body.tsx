@@ -2,7 +2,7 @@ import { dataTodos } from "../data/todos";
 import { TodoItem } from "./todo-item";
 import { useState } from "react";
 
-export default function Body() {
+export function Body() {
   const [addToDo, setAddToDo] = useState<string>("");
   return (
     <div className="flex-1 p-4">
