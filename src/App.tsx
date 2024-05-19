@@ -1,7 +1,7 @@
-import Aside from "./components/Aside";
-import Body from "./components/Body";
+import Aside from "./components/aside";
+import Body from "./components/body";
 
-function App() {
+export function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1 flex">
@@ -11,5 +11,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

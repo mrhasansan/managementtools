@@ -1,9 +1,24 @@
-import ToDoList from "./ToDoList";
+import { dataTodos } from "../data/todos";
+import { useState } from "react";
+import { TodoItem } from "./todo-item";
 
 export default function Body() {
+  const name = "Maruf Hasan";
+
+  const [addToDo, setAddToDo] = useState<string>("");
   return (
     <div className="flex-1 p-4">
-      <ToDoList />
+      <div>
+        <input required type="text" value={addToDo} className=" border border-gray-50 rounded-md px-4 m-4" placeholder="Add a new to-do" onChange={(e) => setAddToDo(e.target.value)} />
+        <button className=" bg-sky-500 rounded-md mx-4 px-4">Add</button>
+        <ul>
+          {dataTodos.map((todo) => (
+            <li key={todo.id}>
+              <TodoItem todo={todo} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
