@@ -8,12 +8,14 @@ export function TodoItem({ todo }: { todo: Todo }) {
   }
   return (
     <div>
-      <li>{todo.title}</li>
-      <p>{todo.status}</p>
-      <button className=" bg-slate-500 rounded-lg w-auto px-4" onClick={handleClick}>
-        {showMore ? "Hide Details" : "Show Details"}
-      </button>
-      {showMore && <p>{todo.description}</p>}
+      <ul>
+        <li>{todo.title}</li>
+        <p>{todo.status}</p>
+        <button className=" bg-slate-500 rounded-lg w-auto px-4" onClick={handleClick}>
+          {showMore ? "Hide Details" : "Show Details"}
+        </button>
+        {showMore && <p>{todo.description}</p>}
+      </ul>
     </div>
   );
 }
