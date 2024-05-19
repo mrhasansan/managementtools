@@ -3,8 +3,6 @@ import { TodoItem } from "./todo-item";
 import { useState } from "react";
 
 export default function Body() {
-  const name = "Maruf Hasan";
-
   const [addToDo, setAddToDo] = useState<string>("");
   return (
     <div className="flex-1 p-4">
