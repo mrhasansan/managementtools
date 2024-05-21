@@ -1,5 +1,5 @@
 import { dataTodos } from "../data/todos";
-import { TodoItem } from "./Todo-item";
+import { TodoItem } from "./TodoItems";
 import { useState } from "react";
 
 export function Body() {
