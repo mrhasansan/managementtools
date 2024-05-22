@@ -2,6 +2,7 @@ import { IoToday } from "react-icons/io5";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { FaBorderAll } from "react-icons/fa6";
 import { IoIosDoneAll } from "react-icons/io";
+import { FaHome, FaCalendarAlt, FaList, FaFlag, FaCheckCircle, FaPlus } from "react-icons/fa";
 
 export function Aside() {
   function search(formData: FormData) {
