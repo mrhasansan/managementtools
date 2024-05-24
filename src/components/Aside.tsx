@@ -22,24 +22,37 @@ export function Aside() {
       >
         <input id="keyword" name="query" type="search" className=" w-full border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-gray-500 " placeholder="Search ..." />
       </form>
-      <div className="grid grid-cols-2 gap-4 my-4">
-        <div className="bg-stone-50 rounded-lg p-2 ">
-          <IoToday size={32} />
-          <p>Today</p>
-        </div>
-        <div className="bg-stone-50 rounded-lg p-2 ">
-          <AiOutlineSchedule size={32} />
-          <p>Scheduled</p>
-        </div>
-        <div className="bg-stone-50 rounded-lg p-2 ">
-          <FaBorderAll size={32} />
-          <p>All</p>
-        </div>
-        <div className="bg-stone-50 rounded-lg p-2 ">
-          <IoIosDoneAll size={32} />
-          <p>Complete</p>
-        </div>
-      </div>
+
+      <ul className="menu  lg:menu-horizontal rounded-box ">
+        <li className="my-2">
+          <a>
+            <IoToday size={32} />
+            Today
+            <span className="badge badge-sm">99+</span>
+          </a>
+        </li>
+        <li className="my-2">
+          <a>
+            <IoIosDoneAll size={32} />
+            Complete
+            <span className="badge badge-sm badge-warning">NEW</span>
+          </a>
+        </li>
+        <li className="my-2">
+          <a>
+            <FaBorderAll size={32} />
+            All
+            <span className="badge badge-xs badge-info"></span>
+          </a>
+        </li>
+        <li className="my-2">
+          <a>
+            <AiOutlineSchedule size={32} />
+            Schedule
+            <span className="badge badge-xs badge-info"></span>
+          </a>
+        </li>
+      </ul>
     </aside>
   );
 }

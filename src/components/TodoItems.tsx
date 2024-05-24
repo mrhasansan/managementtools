@@ -10,11 +10,13 @@ export function TodoItem({ todo }: { todo: Todo }) {
     <div>
       <ul>
         <li>{todo.title}</li>
-        <p>{todo.status}</p>
-        <button className=" bg-slate-500 rounded-lg w-auto px-4" onClick={handleClick}>
-          {showMore ? "Hide Details" : "Show Details"}
+        <button className=" btn rounded-lg w-auto px-4 " onClick={handleClick}>
+          {showMore ? "Hide" : "Show Details Todo"}
         </button>
         {showMore && <p>{todo.description}</p>}
+        <p>Status : {todo.status}</p>
+        <button className="btn rounded-lg  px-4 m-4 ">Edit</button>
+        <button className=" btn rounded-lg px-4 m-4">Delete</button>
       </ul>
     </div>
   );

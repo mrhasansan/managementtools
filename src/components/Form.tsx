@@ -25,29 +25,30 @@ export default function Form() {
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Add Task </h1>
       <form method="post" onSubmit={submitNewTask}>
         <div className="mb-4">
-          <label htmlFor="title" className="block text-gray-700 font-bold mb-2">
+          <label className="input input-bordered flex items-center gap-2">
             Title
+            <input type="text" id="title" name="title" placeholder="Task name" required className="grow" />
           </label>
-          <input type="text" id="title" name="title" placeholder="Add Todo..." required className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
+
         <div className="mb-4">
-          <label htmlFor="description" className="block text-gray-700 font-bold mb-2">
+          <label htmlFor="description" className="input input-bordered flex items-center gap-2">
             Description
+            <input type="text" id="description" name="description" placeholder="description..." required className="grow" />
           </label>
-          <input type="text" id="description" name="description" placeholder="description..." required className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div className="mb-4">
-          <label htmlFor="status" className="block text-gray-700 font-bold mb-2">
-            Status
-          </label>
-          <select id="status" name="status" required className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <select id="status" name="status" required className="select select-bordered w-full ">
+            <option disabled selected>
+              select status
+            </option>
             <option value="notstarted">Not started</option>
             <option value="inprogress">In Progress</option>
             <option value="done">Done</option>
             <option value="cancel">Cancel</option>
           </select>
         </div>
-        <button type="submit" className="w-full py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-300">
+        <button type="submit" className="btn btn-block ">
           Add
         </button>
       </form>
