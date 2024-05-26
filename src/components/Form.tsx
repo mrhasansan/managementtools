@@ -38,8 +38,8 @@ export default function Form() {
           </label>
         </div>
         <div className="mb-4">
-          <select id="status" name="status" required className="select select-bordered w-full ">
-            <option disabled selected>
+          <select id="status" name="status" required className="select select-bordered w-full " defaultValue="">
+            <option disabled value="">
               select status
             </option>
             <option value="notstarted">Not started</option>
