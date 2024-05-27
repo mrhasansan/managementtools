@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { type Todo, dataTodos } from "../data/todos";
-import { TodoItem } from "./TodoItems";
 
 export default function Form() {
   const [tasks, setTask] = useState(dataTodos);
@@ -52,12 +51,6 @@ export default function Form() {
           Add
         </button>
       </form>
-      <div className="mt-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">Task List</h2>
-        {tasks.map((task) => (
-          <TodoItem key={task.id} todo={task} />
-        ))}
-      </div>
     </div>
   );
 }
