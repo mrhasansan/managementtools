@@ -19,6 +19,12 @@ export function stateReducer(state: State, action: Action) {
         tasks: state.tasks.filter((task) => task.id !== action.payload.id),
       };
     }
+    case "update": {
+      return {
+        ...state,
+        task: state.tasks.map((task) => (task.id === action.payload.id ? action.payload : task)),
+      };
+    }
     default: {
       throw Error("Unknown action: " + action.type);
     }
