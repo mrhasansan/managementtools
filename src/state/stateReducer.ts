@@ -1,4 +1,4 @@
-import { Task, dataTasks } from "../data/tasks";
+import { dataTasks } from "../data/tasks";
 import { State, Action } from "./RootProvider";
 
 export const initialState: State = {
