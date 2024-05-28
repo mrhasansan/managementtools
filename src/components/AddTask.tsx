@@ -1,23 +1,19 @@
-import React, { useState } from "react";
-import { type Todo, dataTodos } from "../data/todos";
+import { useAddTaskHook } from "../hooks/useAddTaskHook";
 
-export default function Form() {
-  const [tasks, setTask] = useState(dataTodos);
+export function AddTask() {
+  const addTask = useAddTaskHook();
   const submitNewTask = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const newTask: Todo = {
-      id: tasks.length > 0 ? Math.max(...tasks.map((task) => task.id)) + 1 : 1,
-      title: formData.get("title")?.toString() || "untitled",
-      description: formData.get("description")?.toString() || "",
-      status: formData.get("status")?.toString() || "",
-      createdAt: new Date(),
-      dueDate: new Date(),
-    };
 
-    setTask([...tasks, newTask]);
-    console.log(tasks);
+    const title = formData.get("title")?.toString() || "untitled";
+    const description = formData.get("description")?.toString() || "";
+    const status = formData.get("status")?.toString() || "";
+    const createdAt = new Date();
+
+    addTask(title, description, status, createdAt);
+    console.log(`title : ${title}`);
   };
   return (
     <div className="  bg-white  rounded-lg p-6">
