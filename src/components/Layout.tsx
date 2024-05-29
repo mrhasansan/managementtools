@@ -1,6 +1,6 @@
 import { AddTask } from "./AddTask";
 import { RootProvider } from "../state/RootProvider";
-import { TaskList } from "./TaskList";
+import { TaskList } from "../routes/TaskList";
 
 export function Layout() {
   return (
