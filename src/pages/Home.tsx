@@ -1,13 +1,11 @@
-import { AddTask } from "./AddTask";
+import { AddTask } from "../components/AddTask";
 import { RootProvider } from "../state/RootProvider";
-import { TaskList } from "./TaskList";
+import { TaskList } from "../components/TaskList";
 
-export function Layout() {
+export function Home() {
   return (
     <div className="flex-1 p-4">
-      {/* <Form /> */}
       <RootProvider>
-        {" "}
         <AddTask />
         <TaskList />
       </RootProvider>
