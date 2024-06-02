@@ -52,7 +52,6 @@ export function TaskItem({ task }: { task: Task }) {
       <h1>{taskContent}</h1>
 
       <div className="flex space-x-4">
-        <button className="bg-blue-500 text-white py-2 px-4 rounded">Edit</button>
         <button onClick={() => deleteTask(task.id)} className="bg-red-500 text-white py-2 px-4 rounded">
           Remove
         </button>
@@ -60,29 +59,3 @@ export function TaskItem({ task }: { task: Task }) {
     </div>
   );
 }
-
-// function Task({ task }: { task: TaskType }) {
-//   const [isEditing, setIsEditing] = useState(false);
-//   const updateTask = useUpdateTaskHook();
-//   let taskContent;
-//   if (isEditing) {
-//     taskContent = (
-//       <div>
-//         <h1>lagi editing</h1>
-//         <input />
-//         <button onClick={() => setIsEditing(false)} className="bg-red-500 text-white px-4 py-2 rounded-lg">
-//           Save
-//         </button>
-//       </div>
-//     );
-//   } else {
-//     taskContent = (
-//       <div>
-//         <h1>sudah edit</h1>
-//         <button onClick={() => setIsEditing(true)} className="bg-red-500 text-white px-4 py-2 rounded-lg">
-//           Edit{" "}
-//         </button>
-//       </div>
-//     );
-//   }
-// }
