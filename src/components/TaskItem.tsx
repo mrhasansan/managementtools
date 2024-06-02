@@ -36,8 +36,8 @@ export function TaskItem({ task }: { task: Task }) {
     taskContent = (
       <div>
         <div className="flex flex-col">
-          <span className="font-medium text-gray-900">{task.title}</span>
-          <p className="text-sm text-gray-700">{task.description}</p>
+          <span className="font-medium text-gray-900">{editedTask.title}</span>
+          <p className="text-sm text-gray-700">{editedTask.description}</p>
           <p className="text-xs text-gray-500">Due date: {new Date(task.dueDate).toLocaleDateString()}</p>
         </div>
         <button onClick={() => setIsEditing(true)} className="bg-green-500 text-white px-4 py-2 rounded-lg">
@@ -49,11 +49,6 @@ export function TaskItem({ task }: { task: Task }) {
 
   return (
     <div className="flex justify-between items-center p-4 bg-white rounded-md shadow-sm hover:shadow-md transition-shadow mb-3">
-      <div className="flex flex-col">
-        <span className="font-medium text-gray-900">{task.title}</span>
-        <p className="text-sm text-gray-700">{task.description}</p>
-        <p className="text-xs text-gray-500">Due date: {new Date(task.dueDate).toLocaleDateString()}</p>
-      </div>
       <h1>{taskContent}</h1>
 
       <div className="flex space-x-4">
