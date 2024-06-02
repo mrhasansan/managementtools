@@ -1,5 +1,5 @@
 import { TaskItem } from "./TaskItem";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { StateContext } from "../state/RootProvider";
 import { Link, useSearchParams } from "react-router-dom";
 
