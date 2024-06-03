@@ -1,12 +1,13 @@
 import { useRouteError } from "react-router-dom";
 
 type RouterError = {
-  statusText?: String;
+  statusText?: string;
   message?: string;
 };
 export function ErrorPage() {
   const error = useRouteError() as RouterError;
   console.log(error);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="card bg-white shadow-lg rounded-lg p-8">

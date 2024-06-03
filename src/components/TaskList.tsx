@@ -2,6 +2,7 @@ import { TaskItem } from "./TaskItem";
 import { useContext, useEffect } from "react";
 import { StateContext } from "../state/RootProvider";
 import { Link, useSearchParams } from "react-router-dom";
+import { AddTask } from "./AddTask";
 
 export function TaskList() {
   const { tasks } = useContext(StateContext);
@@ -15,14 +16,13 @@ export function TaskList() {
 
   return (
     <div>
+      <AddTask />
       <h2 className="text-xl font-bold mb-4">Tasks</h2>
 
       <ul className="space-y-3 ">
         {tasks.map((task) => (
           <li key={task.id}>
-            <Link to={`/tasks/${task.id}`}>
-              <TaskItem task={task} />
-            </Link>
+            <TaskItem task={task} />
           </li>
         ))}
       </ul>

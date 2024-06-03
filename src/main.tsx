@@ -3,23 +3,35 @@ import ReactDOM from "react-dom/client";
 import { App } from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import { ErrorPage } from "./pages/ErrorPage";
-import { About } from "./pages/About";
-import { EditTask } from "./components/EditTask";
+import { ErrorPage } from "./routes/ErrorPage";
+import { AboutRoute } from "./routes/About";
+
+import { HomePage } from "./routes/Home";
+
+import { TasksRoute } from "./routes/TaskRoute";
+import { AddTask } from "./components/AddTask";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/", /// main root
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/about",
-        element: <About />,
+        path: "/", // landing page root
+        element: <HomePage />,
       },
       {
-        path: "/tasks/:taskId",
-        element: <EditTask />,
+        path: "/about", //
+        element: <AboutRoute />,
+      },
+      {
+        path: "/tasks",
+        element: <TasksRoute />,
+      },
+      {
+        path: "/addtask",
+        element: <AddTask />,
       },
     ],
   },

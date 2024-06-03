@@ -7,7 +7,7 @@ export function useAddTaskHook() {
   const state = useContext(StateContext);
 
   return (title: string, description: string, status: string, dueDate: Date) => {
-    const nextId = state.tasks.length + 1;
+    const nextId = state.tasks.length ? Math.max(...state.tasks.map((task) => task.id)) + 1 : 1;
 
     const newTask: Task = {
       id: nextId,
@@ -17,6 +17,8 @@ export function useAddTaskHook() {
       createdAt: new Date(),
       dueDate,
     };
+
+    console.log(`Dispatching Add Task - ID: ${newTask}, Title: ${title}, Description: ${description}, Status: ${status}, DueDate: ${dueDate}`);
 
     dispatchAction({
       type: "add",

@@ -1,16 +1,17 @@
-import { dataTasks } from "../data/tasks";
+import { Task, dataTasks } from "../data/tasks";
 import { State, Action } from "./RootProvider";
 
-export const initialState: State = {
-  tasks:
-    JSON.parse(localStorage.getItem("tasks") || "[]").map((task: any) => ({
-      ...task,
-      dueDate: new Date(task.dueDate),
-      createdAt: new Date(task.createdAt),
-    })) || dataTasks,
-};
+export function getInitialState() {
+  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]") as Task[];
 
-export function stateReducer(state: State, action: Action) {
+  const initialState = {
+    tasks: tasks.length ? tasks : dataTasks,
+  };
+  console.log(`Intial state :${initialState}`);
+  return initialState;
+}
+
+export function taskReducer(state: State, action: Action) {
   switch (action.type) {
     case "add": {
       const newState = {
@@ -18,6 +19,7 @@ export function stateReducer(state: State, action: Action) {
         tasks: [...state.tasks, action.payload],
       };
       localStorage.setItem("tasks", JSON.stringify(newState.tasks));
+      console.log(`Addi newState : ${newState}`);
       return newState;
     }
     case "delete": {
@@ -31,7 +33,7 @@ export function stateReducer(state: State, action: Action) {
     case "update": {
       const newState = {
         ...state,
-        task: state.tasks.map((task) => (task.id === action.payload.id ? action.payload : task)),
+        tasks: state.tasks.map((task) => (task.id === action.payload.id ? action.payload : task)),
       };
       localStorage.setItem("tasks", JSON.stringify(newState.tasks));
       return newState;

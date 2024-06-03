@@ -1,7 +1,11 @@
-import { useState } from "react";
-import { type Task } from "../data/tasks";
+import { FloatingLabel } from "flowbite-react";
+
 import { useDeleteTodohook } from "../hooks/useDeleteTaskHook";
 import { useUpdateTaskHook } from "../hooks/useUpdateTaskHook";
+import { HiTrash } from "react-icons/hi";
+
+import { useState } from "react";
+import { type Task } from "../data/tasks";
 
 export function TaskItem({ task }: { task: Task }) {
   const deleteTask = useDeleteTodohook();
@@ -20,11 +24,9 @@ export function TaskItem({ task }: { task: Task }) {
   if (isEditing) {
     taskContent = (
       <div>
-        <div className="flex flex-col">
-          <label htmlFor="title">Title</label>
-          <input id="title" name="title" value={editedTask.title} className="border p-2" onChange={(e) => handleChange("title", e.target.value)} />
-          <label htmlFor="description">Description</label>
-          <input id="description" name="description" value={editedTask.description} className="border p-2" onChange={(e) => handleChange("description", e.target.value)} />
+        <div>
+          <FloatingLabel variant="filled" label="title" sizing="md" value={editedTask.title} onChange={(e) => handleChange("title", e.target.value)} />
+          <FloatingLabel variant="filled" label="description" sizing="md" value={editedTask.description} onChange={(e) => handleChange("description", e.target.value)} />
         </div>
 
         <button onClick={handleSave} className="bg-blue-500 text-white px-4 py-2 rounded-lg">
@@ -52,9 +54,7 @@ export function TaskItem({ task }: { task: Task }) {
       <h1>{taskContent}</h1>
 
       <div className="flex space-x-4">
-        <button onClick={() => deleteTask(task.id)} className="bg-red-500 text-white py-2 px-4 rounded">
-          Remove
-        </button>
+        <HiTrash onClick={() => deleteTask(task.id)} size={36} color="red" />
       </div>
     </div>
   );

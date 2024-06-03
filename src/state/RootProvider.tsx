@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode, createContext, useReducer } from "react";
 import { Task } from "../data/tasks";
-import { initialState, stateReducer } from "./stateReducer";
+import { getInitialState, taskReducer } from "./stateReducer";
 
 export type State = {
   tasks: Task[];
@@ -22,7 +22,7 @@ type RootProps = {
 };
 
 export function RootProvider({ children }: RootProps) {
-  const [state, dispatch] = useReducer(stateReducer, initialState);
+  const [state, dispatch] = useReducer(taskReducer, getInitialState());
 
   return (
     <StateContext.Provider value={state}>
