@@ -62,8 +62,8 @@ export function AddTask() {
                 <option disabled value="">
                   Select status
                 </option>
-                <option value="notstarted">Not started</option>
-                <option value="inprogress">In Progress</option>
+                <option value="not started">Not started</option>
+                <option value="in progress">In Progress</option>
                 <option value="done">Done</option>
               </select>
             </div>

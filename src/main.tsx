@@ -5,11 +5,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import { ErrorPage } from "./routes/ErrorPage";
 import { AboutRoute } from "./routes/About";
-
 import { HomePage } from "./routes/Home";
-
 import { TasksRoute } from "./routes/TaskRoute";
-import { AddTask } from "./components/AddTask";
+import { PlanedTasks } from "./routes/PlanedTasks";
+import { ProgressTasks } from "./routes/ProgressTasks";
+import { DoneTasks } from "./routes/DoneTask";
 
 const router = createBrowserRouter([
   {
@@ -30,8 +30,16 @@ const router = createBrowserRouter([
         element: <TasksRoute />,
       },
       {
-        path: "/addtask",
-        element: <AddTask />,
+        path: "/plan",
+        element: <PlanedTasks />,
+      },
+      {
+        path: "/progress",
+        element: <ProgressTasks />,
+      },
+      {
+        path: "/done",
+        element: <DoneTasks />,
       },
     ],
   },

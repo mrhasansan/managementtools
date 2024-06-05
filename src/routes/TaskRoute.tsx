@@ -1,5 +1,5 @@
-import { AddTask } from "../components/AddTask";
-import { TaskList } from "../components/TaskList";
+import { AddTask } from "./AddTask";
+import { TaskList } from "./TaskList";
 
 export function TasksRoute() {
   return (
