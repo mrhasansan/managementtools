@@ -15,7 +15,9 @@ export function LeftSide() {
             <Sidebar.Item icon={HiQrcode}>
               <Link to="/about"> About</Link>
             </Sidebar.Item>
-            <Sidebar.Item icon={HiClipboardList}></Sidebar.Item>
+            <Sidebar.Item icon={HiClipboardList}>
+              <Link to="/tasks"> All task</Link>
+            </Sidebar.Item>
             <Sidebar.Item href="/plan" icon={HiClipboard} label="3" labelColor="dark">
               <Link to="/plan"> Planned</Link>
             </Sidebar.Item>
